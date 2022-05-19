@@ -1,5 +1,5 @@
 import app
-
+import math
 
 class InvalidPermissions(Exception):
     pass
@@ -32,7 +32,20 @@ class Calculator:
         self.check_types(x, y)
         return x ** y
 
-    def check_types(self, x, y):
+    def sqrt(self, x):
+        self.check_types(x)
+
+        if x < 0:
+            raise TypeError("Square root of negative number is not possible without using complex numbers")
+
+        return math.sqrt(x)
+    
+    def log(self, x):
+        self.check_types(x)
+
+        return math.log10(x)
+
+    def check_types(self, x, y=0):
         if not isinstance(x, (int, float)) or not isinstance(y, (int, float)):
             raise TypeError("Parameters must be numbers")
 
