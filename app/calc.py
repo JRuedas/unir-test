@@ -4,14 +4,16 @@ import math
 class InvalidPermissions(Exception):
     pass
 
-
 class Calculator:
+
     def add(self, x, y):
         self.check_types(x, y)
+
         return x + y
 
     def substract(self, x, y):
         self.check_types(x, y)
+
         return x - y
 
     def multiply(self, x, y):
@@ -23,6 +25,7 @@ class Calculator:
 
     def divide(self, x, y):
         self.check_types(x, y)
+
         if y == 0:
             raise TypeError("Division by zero is not possible")
 
@@ -30,6 +33,10 @@ class Calculator:
 
     def power(self, x, y):
         self.check_types(x, y)
+        
+        if x == 0 and y < 0:
+            raise TypeError("0 cannot be raised to a negative power")
+
         return x ** y
 
     def sqrt(self, x):
