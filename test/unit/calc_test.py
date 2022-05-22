@@ -111,7 +111,7 @@ class TestCalculate(unittest.TestCase):
     def test_log_method_fails_with_nan_parameter(self):
         self.assertRaises(TypeError, self.calc.log, "10")
 
-    def test_log_method_fails_with_log_of_zero(self):
+    def test_log_method_fails_with_log_of_zero_or_negative(self):
         self.assertRaises(TypeError, self.calc.log, 0)
         self.assertRaises(TypeError, self.calc.log, -1)
 
