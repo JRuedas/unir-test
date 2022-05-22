@@ -50,8 +50,8 @@ class Calculator:
     def log(self, x):
         self.check_types(x)
 
-        if x == 0:
-            raise TypeError("Cannot compute log10 of zero")
+        if x <= 0:
+            raise TypeError("Cannot compute log10 of negative numbers or zero")
 
         return math.log10(x)
 
