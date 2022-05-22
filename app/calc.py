@@ -43,12 +43,15 @@ class Calculator:
         self.check_types(x)
 
         if x < 0:
-            raise TypeError("Square root of negative number is not possible without using complex numbers")
+            raise TypeError("Cannot compute the square root of negative number without using complex numbers")
 
         return math.sqrt(x)
     
     def log(self, x):
         self.check_types(x)
+
+        if x == 0:
+            raise TypeError("Cannot compute log10 of zero")
 
         return math.log10(x)
 
